@@ -1,0 +1,14 @@
+name = "fluxer-selfhost-edge"
+main = "src/index.js"
+compatibility_date = "2026-11-03"
+workers_dev = true
+
+# Replace with a reachable HTTPS origin for a Fluxer instance you administer.
+# Do not set this to the public Worker URL; that would create a proxy loop.
+[vars]
+ORIGIN_BASE_URL = "https://origin-instance.example.net"
+ENABLE_SAME_ORIGIN_BOOTSTRAP = "true"
+REQUIRE_SINGLE_ORIGIN = "true"
+
+# Intentionally no Cache API, KV, D1, R2, Durable Object or secret binding.
+# Discovery fails closed if core Fluxer endpoints are on a different authority.

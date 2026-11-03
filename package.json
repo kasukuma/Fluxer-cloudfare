@@ -1,0 +1,17 @@
+{
+  "name": "fluxer-selfhost-edge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Single-origin Worker front proxy for an authorized, configured Fluxer self-host",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "node --check src/index.js && node --check scripts/smoke.mjs && node --check test/proxy.test.js",
+    "test": "node --test test/*.test.js",
+    "test:smoke": "node scripts/smoke.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
